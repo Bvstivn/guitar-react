@@ -1,14 +1,14 @@
 //React
-import { useState } from "react";
+import { useState, useEffect } from "react";
 //Componets
 import Header from "./components/Header.jsx";
 import Guitar from "./components/Guitar.jsx";
+//Db
+import { db } from "./data/db.js";
 
 function App() {
   //State
-  const [auth, setAuth] = useState(false);
-  const [total, setTotatl] = useState(0);
-  const [cart, setCart] = useState([]);
+  const [data, setData] = useState(db);
 
   return (
     <>
