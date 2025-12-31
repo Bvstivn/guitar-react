@@ -7,9 +7,15 @@ import Guitar from "./components/Guitar.jsx";
 import { db } from "./data/db.js";
 
 function App() {
+
+  const initialCart = () => {
+    const localStorageCart = localStorage.getItem('cart');
+    return localStorageCart ? JSON.parse(localStorageCart) : [];
+  }
+
   //State
-  const [data, setData] = useState(db);
-  const [cart , setCart] = useState([]);
+  const [data] = useState(db);
+  const [cart , setCart] = useState(initialCart);
 
   const MAX_QUANTITY = 5;
 
